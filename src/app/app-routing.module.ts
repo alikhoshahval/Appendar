@@ -10,8 +10,8 @@ import { LoginV3Page } from './pages/home/login/login';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomePage, data: { title: 'Home'} },
-  { path: 'login', component: LoginV3Page, data: { title: 'Login Page'} },
+  { path: 'home', component: HomePage, data: { title: 'صفحه اصلی'} },
+  { path: 'login', component: LoginV3Page, data: { title: 'ورود به حساب کاربری'} },
 ];
 
 @NgModule({
