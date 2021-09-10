@@ -46,6 +46,10 @@ import { PerfectScrollbarModule }          from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG }        from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
+// HTTP
+import { HttpClient } from '@angular/common/http';
+
+
 // User Login / Register
 import { LoginV3Page }              from './pages/home/login/login';
 
@@ -56,6 +60,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 // Pages
 import { HomePage }          from './pages/home/home';
+
+//Services
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -75,6 +82,7 @@ import { HomePage }          from './pages/home/home';
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyC5gJ5x8Yw7qP_DqvNq3IdZi2WUSiDjskk' }),
     BrowserAnimationsModule,
     BrowserModule,
+    HttpClient,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
@@ -96,7 +104,9 @@ import { HomePage }          from './pages/home/home';
     TagInputModule,
     TrendModule
   ],
-  providers: [ Title, {
+  providers: [
+    AuthService,
+    Title, {
     provide: PERFECT_SCROLLBAR_CONFIG,
     useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
   }],
