@@ -1,7 +1,7 @@
 import { Component, OnDestroy, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import pageSettings from '../../../config/page-settings';
+import pageSettings from '../../config/page-settings';
 
 @Component({
   selector: 'login',

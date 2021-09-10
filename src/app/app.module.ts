@@ -45,10 +45,12 @@ import { adapterFactory }                  from 'angular-calendar/date-adapters/
 import { PerfectScrollbarModule }          from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG }        from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+//  Consuming HTTP Services
 import { HttpClientModule } from '@angular/common/http';
 
 // User Login / Register
-import { LoginV3Page }              from './pages/home/login/login';
+import { LoginV3Page }              from './pages/login/login';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -57,6 +59,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 // Pages
 import { HomePage }          from './pages/home/home';
+import { PostsComponent } from './pages/posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +73,7 @@ import { HomePage }          from './pages/home/home';
     FloatSubMenuComponent,
     LoginV3Page,
     HomePage,
+    PostsComponent,
   ],
   imports: [
     AppRoutingModule,

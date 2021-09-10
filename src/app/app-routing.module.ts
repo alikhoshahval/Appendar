@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { HomePage } from './pages/home/home';
 
 // User Login / Register
-import { LoginV3Page } from './pages/home/login/login';
+import { LoginV3Page } from './pages/login/login';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
