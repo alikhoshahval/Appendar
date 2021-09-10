@@ -45,6 +45,7 @@ import { adapterFactory }                  from 'angular-calendar/date-adapters/
 import { PerfectScrollbarModule }          from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG }        from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { HttpClientModule } from '@angular/common/http';
 
 // User Login / Register
 import { LoginV3Page }              from './pages/home/login/login';
@@ -75,6 +76,7 @@ import { HomePage }          from './pages/home/home';
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyC5gJ5x8Yw7qP_DqvNq3IdZi2WUSiDjskk' }),
     BrowserAnimationsModule,
     BrowserModule,
+    HttpClientModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
@@ -94,7 +96,7 @@ import { HomePage }          from './pages/home/home';
     ReactiveFormsModule,
     SweetAlert2Module.forRoot(),
     TagInputModule,
-    TrendModule
+
   ],
   providers: [ Title, {
     provide: PERFECT_SCROLLBAR_CONFIG,
