@@ -1,0 +1,104 @@
+<!-- begin breadcrumb -->
+<ol class="breadcrumb pull-right">
+  <li class="breadcrumb-item active"><a href="javascript:;">داده</a></li>
+  <li class="breadcrumb-item"><a href="javascript:;">کتابخانه</a></li>
+  <li class="breadcrumb-item"><a href="javascript:;">صفحه اصلی</a></li>
+</ol>
+<!-- end breadcrumb -->
+<!-- begin page-header -->
+<h1 class="page-header">صفحه اصلی <small>توضیحات صفحه ...</small></h1>
+<!-- end page-header -->
+
+<!-- begin panel -->
+<panel title="فیلتر">
+  <form>
+    <div class="form-group row m-b-15">
+      <div class="col-md-2">
+        <select class="form-control">
+          <option value="">نام مرکز</option>
+          <option>مشهد</option>
+          <option>شیراز</option>
+          <option>اصفهان</option>
+          <option>تبریز</option>
+          <option>رشت</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select class="form-control">
+          <option value="">نام فروشنده</option>
+          <option>علی قاسمی</option>
+          <option>بهزاد نیک نژاد</option>
+          <option>مرتضی نظری</option>
+          <option>سعید چرچی پور</option>
+          <option>حمید عقیلی</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select class="form-control">
+          <option value="">نام مسیر</option>
+          <option>بلوار فرحزادی</option>
+          <option>بلوار نیک نژاد</option>
+          <option>خیابان درختی</option>
+          <option>سه راه آذری</option>
+          <option>خیابان قزوین</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select class="form-control">
+          <option value="">نام مشتری</option>
+          <option>علی قاسمی</option>
+          <option>بهزاد نیک نژاد</option>
+          <option>مرتضی نظری</option>
+          <option>سعید چرچی پور</option>
+          <option>حمید عقیلی</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <div class="form-inline">
+          <div class="input-group">
+            <input
+              class="form-control"
+              placeholder="سال-ماه-روز"
+              name="d2"
+              #c2="ngModel"
+              [(ngModel)]="model2"
+              ngbDatepicker
+              #d2="ngbDatepicker"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary"
+                (click)="d2.toggle()"
+                type="button"
+              >
+                <i class="fa fa-calendar"></i>
+              </button>
+            </div>
+          </div>
+          <button
+            class="btn btn-sm btn-outline-primary"
+            (click)="model2 = today"
+            style="margin-right: 10px"
+          >
+            انتخاب امروز
+          </button>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <a href="javascript:;" class="btn btn-default m-r-5"
+          ><i class="fa fa-filter"></i>فیلتر
+        </a>
+      </div>
+    </div>
+  </form>
+</panel>
+
+<div class="row">
+  <div class="col-md-3">
+    <panel title="نتیجه"> </panel>
+  </div>
+  <div class="col-md-9">
+    <panel title="نقشه"> </panel>
+  </div>
+  <!-- end panel -->
+</div>

@@ -1,0 +1,106 @@
+<!-- begin #header -->
+<div id="header" class="header navbar-default">
+  <!-- begin navbar-header -->
+  <div class="navbar-header">
+    <button
+      type="button"
+      class="navbar-toggle pull-left"
+      *ngIf="this.pageSidebarTwo"
+      (click)="mobileRightSidebarToggle()"
+    >
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="/" class="navbar-brand">
+      <span
+        ><img src="../../../../assets/img/logo.png" style="width: 30px" alt=""
+      /></span>
+      <b>مدسینا</b>
+    </a>
+    <button
+      type="button"
+      class="navbar-toggle pt-0 pb-0 mr-0"
+      (click)="mobileTopMenuToggle()"
+      *ngIf="
+        this.pageSettings.pageTopMenu && !this.pageSettings.pageWithoutSidebar
+      "
+    >
+      <span class="fa-stack fa-lg text-inverse">
+        <i class="far fa-square fa-stack-2x"></i>
+        <i class="fa fa-cog fa-stack-1x"></i>
+      </span>
+    </button>
+    <button
+      type="button"
+      class="navbar-toggle pt-0 pb-0 mr-0"
+      (click)="mobileMegaMenuToggle()"
+      *ngIf="this.pageSettings.pageMegaMenu"
+    >
+      <span class="fa-stack fa-lg text-inverse">
+        <i class="far fa-square fa-stack-2x"></i>
+        <i class="fa fa-cog fa-stack-1x"></i>
+      </span>
+    </button>
+    <button
+      type="button"
+      class="navbar-toggle"
+      (click)="mobileSidebarToggle()"
+      *ngIf="!this.pageSettings.pageWithoutSidebar"
+    >
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <button
+      type="button"
+      class="navbar-toggle"
+      (click)="mobileTopMenuToggle()"
+      *ngIf="
+        this.pageSettings.pageTopMenu && this.pageSettings.pageWithoutSidebar
+      "
+    >
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <!-- end navbar-header -->
+
+  <!-- begin header-nav -->
+  <ul class="navbar-nav navbar-right">
+    <li class="dropdown" ngbDropdown>
+      <a href="javascript:;" ngbDropdownToggle class="dropdown-toggle f-s-14">
+        <i class="fa fa-bell"></i>
+        <span class="label">0</span>
+      </a>
+      <div class="dropdown-menu media-list dropdown-menu-right" ngbDropdownMenu>
+        <div class="dropdown-header">نوتیفیکشن (0)</div>
+        <div class="text-center width-300 p-b-10 p-t-10">
+          هیج نوتیفیکیشنی یافت نشد
+        </div>
+      </div>
+    </li>
+
+    <li class="dropdown navbar-user" ngbDropdown>
+      <a href="javascript:;" class="dropdown-toggle" ngbDropdownToggle>
+        <div class="image image-icon bg-black text-grey-darker">
+          <i class="fa fa-user"></i>
+        </div>
+        <span class="d-none d-md-inline">شهرام رمضانی</span>
+        <b class="caret"></b>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+        <a href="javascript:;" class="dropdown-item">خروج</a>
+      </div>
+    </li>
+    <li class="divider d-none d-md-block" *ngIf="this.pageSidebarTwo"></li>
+    <li class="d-none d-md-block" *ngIf="this.pageSidebarTwo">
+      <a href="javascript:;" (click)="toggleSidebarRight()" class="f-s-14">
+        <i class="fa fa-th"></i>
+      </a>
+    </li>
+  </ul>
+  <!-- end header navigation right -->
+</div>
+<!-- end #header -->
