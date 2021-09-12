@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { FormGroup, NgForm, FormBuilder } from '@angular/forms';
 import pageSettings from '../../config/page-settings';
 
 @Component({
@@ -11,7 +12,12 @@ import pageSettings from '../../config/page-settings';
 export class LoginV3Page implements OnDestroy {
   pageSettings = pageSettings;
 
-  constructor(private router: Router, private renderer: Renderer2) {
+  form : FormGroup;
+
+  constructor(private router: Router,
+    private renderer: Renderer2,
+    private formBuilder:FormBuilder,
+    private http:HttpClient) {
     this.pageSettings.pageEmpty = true;
     this.renderer.addClass(document.body, 'bg-white');
   }
@@ -21,7 +27,21 @@ export class LoginV3Page implements OnDestroy {
     this.renderer.removeClass(document.body, 'bg-white');
   }
 
-  formSubmit(f: NgForm) {
-    this.router.navigate(['dashboard/v3']);
+  // formSubmit(f: NgForm) {
+  //   this.router.navigate(['dashboard/v3']);
+  // }
+
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      email:'',
+      password:''
+    });
+  }
+
+  submit():void{
+    // console.log(this.form.getRawValue());
+    this.http.post('http://localhost:8000/api/login',
+    this.form.getRawValue(), { withCredentials:true
+    }).subscribe(()=>this.router.navigate(['/home']));
   }
 }

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import pageSettings from './../../config/page-settings';
 
@@ -9,7 +10,9 @@ import pageSettings from './../../config/page-settings';
 export class HomePage {
   pageSettings = pageSettings;
 
-  constructor() {
+  message = 'شما لاگین نکرده اید' ;
+
+  constructor(private http:HttpClient) {
     this.pageSettings.pageSidebarSearch = true;
   }
 
@@ -21,6 +24,20 @@ export class HomePage {
     model2: Date;
     get today() {
       return new Date();
+    }
+
+
+    ngOnInit():void {
+      this.http.get('http://localhost:8000/api/user',{withCredentials:true})
+      .subscribe((res:any) => {
+        // console.log(res);
+        this.message =`خوش آمدید ${res.name}`
+     },
+      err => {
+        console.log(err)
+      }
+
+      );
     }
 
 }
