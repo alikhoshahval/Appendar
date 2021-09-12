@@ -60,6 +60,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 // Pages
 import { HomePage }          from './pages/home/home';
 import { PostsComponent } from './pages/posts/posts.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { PostsComponent } from './pages/posts/posts.component';
     LoginV3Page,
     HomePage,
     PostsComponent,
+    RegisterComponent,
   ],
   imports: [
     AppRoutingModule,
