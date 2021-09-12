@@ -90,8 +90,19 @@
         <span class="d-none d-md-inline">شهرام رمضانی</span>
         <b class="caret"></b>
       </a>
-      <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
-        <a href="javascript:;" class="dropdown-item">خروج</a>
+      <div
+        *ngIf="!authenticated"
+        class="dropdown-menu dropdown-menu-right"
+        ngbDropdownMenu
+      >
+        <a routerLink="/login" class="dropdown-item">Login</a>
+      </div>
+      <div
+        *ngIf="authenticated"
+        class="dropdown-menu dropdown-menu-right"
+        ngbDropdownMenu
+      >
+        <a (click)="logout()" class="dropdown-item">خروج</a>
       </div>
     </li>
     <li class="divider d-none d-md-block" *ngIf="this.pageSidebarTwo"></li>
